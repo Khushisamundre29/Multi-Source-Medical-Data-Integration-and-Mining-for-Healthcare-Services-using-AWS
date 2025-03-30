@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" xmlns:background-image="http://www.w3.org/1999/xhtml">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}">
+		<!-- main css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css')}}">
+	<style>
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+
+<body>
+
+	<header class="header_area">
+		<div class="container" align="center">
+			<br>
+		<h1>Multi-source medical data integration and mining for health care services</h1><br>
+		</div>
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+
+					<div class="container">
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<div class="row ml-0 w-100"align="center "!mportant>
+							<div class="col-lg-12">
+								<ul class="nav navbar-nav center_nav ">
+
+									<li class="nav-item ">
+										<a class="nav-link" href="/">Home</a>
+									</li>
+	<li class="nav-item ">
+										<a class="nav-link" href="{{url_for('admin')}}">Admin</a>
+									</li>
+									<li class="nav-item ">
+										<a class="nav-link" href="{{url_for('doctor')}}">Doctor</a>
+									</li>
+
+										<li class="nav-item active">
+										<a class="nav-link" href="{{url_for('patient')}}">Patient</a>
+									</li>
+									<li class="nav-item ">
+										<a class="nav-link" href="{{url_for('ioh')}}">IOH</a></li>
+									</li>
+	</li>
+										<li class="nav-item ">
+										<a class="nav-link" href="/">Logout</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</nav>
+
+		</div>
+	</header>
+
+
+	<!--================ Start Offered Services Area =================-->
+	<section class="service_area section_gap">
+		<div class="container">
+  			<img src="static/img/banner/p1.jpeg"  alt="Snow" style="width:100%;height: 495px;">
+  				<div class="centered" style=" padding-bottom: 200px;">
+
+					<br><br><br><br><br><br><br><br><br><br><br><br><form action="{{url_for('patient')}}" method="post">
+					{% if ms=="success" %}
+					<br><br><h2>Regestration Successfully Completed</h2>
+					{% endif %}
+					 {% if  m1s=="fg"%}
+                       <br><br> <h2>Please Try Again.</h2>
+                    {% endif %}
+<br><h2>Patient Registration</h2>
+
+						<br><table style="color:red">
+							<tr><td><strong>Enter Name:</strong></td><td><input type="text" name="name" required> </td></tr>
+							<tr><td><strong>Enter Email:</strong></td><td><input type="text" name="email" required> </td></tr>
+                            		<tr><td><strong>Enter Age:</strong></td><td><input type="text" name="age" required> </td></tr>
+							<tr><td><strong>Enter Password:</strong></td><td><input type="password" name="pwd"required> </td></tr>
+                            		<tr><td><strong>Enter Confirm Password:</strong></td><td><input type="password" name="cpwd"required> </td></tr>
+                            <tr><td><strong>Select Gender:</strong></td><td><select name="gender"required>
+                                    <option>Select</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Others</option>
+                                </select>
+                                </td></tr>
+
+                            		<tr><td><strong>Enter Mobile:</strong></td><td><input type="number" name="mobile" required> </td></tr>
+							<tr><td><strong>Enter Disease:</strong></td><td><input type="text" name="disease"required> </td></tr>
+						</table>
+						<br><input type="submit" value="Register"class="btn btn info">&nbsp;<a href="{{url_for('patientlogin')}}" class="btn btn primary">Click Here to Login Page</a>
+					</form>
+				</div>
+	</div>
+
+
+	<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/popper.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/mail-script.js')}}"></script>
+	<script src="{{ url_for('static', filename='js/custom.js')}}"></script>
+</body>
+
+</html>
