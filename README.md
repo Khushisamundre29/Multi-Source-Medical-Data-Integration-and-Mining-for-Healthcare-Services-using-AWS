@@ -1,10 +1,10 @@
 ## Multi-Source Medical Data Integration and Mining for Healthcare Services using AWS
 
-##📌 Overview
+## 📌 Overview
 
 This project leverages Amazon Web Services (AWS) to integrate and analyze medical data from multiple sources securely. By centralizing healthcare data, it enhances accessibility, efficiency, and patient care. The system ensures privacy-preserving data fusion and mining (PDFM), enabling healthcare professionals to access critical insights while maintaining data security.
 
-🚀 Features
+## 🚀 Features
 
 Multi-source medical data integration (EHRs, medical imaging, genetic data, etc.)
 
@@ -18,9 +18,9 @@ Appointment scheduling system
 
 Encryption and security measures for data privacy
 
-🏗️ System Modules
+## 🏗️ System Modules
 
-🔹 Admin
+### 🔹 Admin
 
 Manages doctors and patients.
 
@@ -28,49 +28,49 @@ Handles medicine requests and approvals.
 
 Coordinates doctor appointments.
 
-🔹 Doctor
+### 🔹 Doctor
 
 Manages appointments.
 
 Provides prescriptions and treatments.
 
-🔹 Patients
+### 🔹 Patients
 
 Registers and books appointments.
 
 Views assigned doctors and medical records.
 
-🔹 Internet of Health (IoH)
+### 🔹 Internet of Health (IoH)
 
 Manages medical data sources.
 
 Provides medicine data based on disease patterns.
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 
-Frontend
+### Frontend
 
 HTML, CSS, JavaScript
 
-Backend
+### Backend
 
 Python (Flask/Django)
 
-Database
+### Database
 
 MySQL
 
-Cloud Services
+### Cloud Services
 
 AWS (S3, RDS, Lambda, Glue)
 
-⚙️ Database Setup
+## ⚙️ Database Setup
 
 Import database.sql into MySQL.
 
 Update config.py with database credentials.
 
-📊 UML Diagrams
+## 📊 UML Diagrams
 
 Use Case Diagram - Illustrates system interactions.
 
@@ -82,7 +82,7 @@ Deployment Diagram - Represents server and client infrastructure.
 
 Activity Diagram - Displays workflow sequences.
 
-🔍 Future Enhancements
+## 🔍 Future Enhancements
 
 AI-based predictive healthcare analytics.
 
