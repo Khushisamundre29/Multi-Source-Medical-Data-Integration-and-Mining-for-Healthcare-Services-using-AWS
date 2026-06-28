@@ -237,9 +237,9 @@ Create a `.env` file.
 
 ```env
 DB_HOST=localhost
-DB_USER=root
+DB_USER=your_username
 DB_PASSWORD=yourpassword
-DB_NAME=multisource
+DB_NAME=your_database_name 
 
 AWS_ACCESS_KEY_ID=xxxxxxxx
 AWS_SECRET_ACCESS_KEY=xxxxxxxx
