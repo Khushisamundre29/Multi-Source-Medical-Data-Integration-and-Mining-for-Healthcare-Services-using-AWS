@@ -1,93 +1,118 @@
-<!doctype html>
-<html lang="en" xmlns:background-image="http://www.w3.org/1999/xhtml">
+{% extends "base.html" %}
+{% block title %}HealthCare Platform{% endblock %}
 
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}">
-		<!-- main css -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css')}}">
-	<style>
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
+{% block content %}
+<section class="hero">
+  <img class="hero-img"
+    src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1400&q=80"
+    alt="Healthcare">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">SPARK 2024 Award Winner</span>
+    <h1>Multi-Source Medical Data Integration</h1>
+    <p>A secure platform connecting doctors, patients, and health data with role-based access and AES-encrypted records.</p>
+    <a href="{{ url_for('patient') }}" class="btn btn-white">Get Started</a>
+  </div>
+</section>
 
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-</style>
-</head>
+<div class="main-content">
 
-<body>
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <!-- Hospital/modules icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B6E6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <path d="M12 8v8M8 12h8"/>
+        </svg>
+      </div>
+      <div class="stat-info"><h3>4</h3><p>Integrated Modules</p></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <!-- Lock/encrypt icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B6E6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="11" width="14" height="10" rx="2"/>
+          <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+        </svg>
+      </div>
+      <div class="stat-info"><h3>AES</h3><p>Encrypted Medical Files</p></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <!-- Calendar icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B6E6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <path d="M16 2v4M8 2v4M3 10h18"/>
+          <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+        </svg>
+      </div>
+      <div class="stat-info"><h3>Real-time</h3><p>Appointment Scheduling</p></div>
+    </div>
+  </div>
 
-	<header class="header_area">
-		<div class="container" align="center">
-			<br>
-		<h1>Multi-source medical data integration and mining for health care services</h1><br>
-		</div>
-		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<div class="container">
+  <h2 class="section-title">Choose Your Portal</h2>
+  <p class="section-sub">Select your role to access the platform.</p>
 
-					<div class="container">
+  <div class="role-grid">
 
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<div class="row ml-0 w-100"align="center "!mportant>
-							<div class="col-lg-12">
-								<ul class="nav navbar-nav center_nav ">
+    <a href="{{ url_for('admin') }}" class="role-card">
+      <div class="role-icon" style="background:#E6F4F4;">
+        <!-- Shield/admin icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B6E6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l7 4v5c0 5-3.5 9.7-7 11C8.5 20.7 5 16 5 11V6l7-4z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <h3>Admin</h3>
+      <p>Manage doctors, patients, and medicine requests</p>
+      <span class="btn btn-outline btn-sm">Admin Login</span>
+    </a>
 
-									<li class="nav-item active">
-										<a class="nav-link" href="/">Home</a>
-									</li>
-	<li class="nav-item ">
-										<a class="nav-link" href="{{url_for('admin')}}">Admin</a>
-									</li>
-									<li class="nav-item ">
-										<a class="nav-link" href="{{url_for('doctor')}}">Doctor</a>
-									</li>
+    <a href="{{ url_for('doctor') }}" class="role-card">
+      <div class="role-icon" style="background:#EBF8FF;">
+        <!-- Stethoscope/doctor icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B6E6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/>
+          <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/>
+          <circle cx="20" cy="10" r="2"/>
+        </svg>
+      </div>
+      <h3>Doctor</h3>
+      <p>Register and manage your patient appointments</p>
+      <span class="btn btn-outline btn-sm">Doctor Portal</span>
+    </a>
 
-										<li class="nav-item ">
-										<a class="nav-link" href="{{url_for('patient')}}">Patient</a>
-									</li>
-									<li class="nav-item ">
-										<a class="nav-link" href="{{url_for('ioh')}}">IOH</a></li>
-									</li>
+    <a href="{{ url_for('patient') }}" class="role-card">
+      <div class="role-icon" style="background:#F0FFF4;">
+        <!-- User/patient icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B6E6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          <path d="M9 12.5l1.5 3 1.5-1.5 1.5 1.5 1.5-3"/>
+        </svg>
+      </div>
+      <h3>Patient</h3>
+      <p>Find specialists, book appointments, track status</p>
+      <span class="btn btn-outline btn-sm">Patient Portal</span>
+    </a>
 
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				</div>
-			</nav>
+    <a href="{{ url_for('ioh') }}" class="role-card">
+      <div class="role-icon" style="background:#FFF5F5;">
+        <!-- Database/IOH icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B6E6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="12" cy="5" rx="9" ry="3"/>
+          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          <path d="M12 12v6M9 15l3-3 3 3"/>
+        </svg>
+      </div>
+      <h3>IOH</h3>
+      <p>Upload and manage encrypted medicine data</p>
+      <span class="btn btn-outline btn-sm">IOH Portal</span>
+    </a>
 
-		</div>
-	</header>
+  </div>
 
-
-	<!--================ Start Offered Services Area =================-->
-	<section class="service_area section_gap">
-		<div class="container"style="    padding-bottom: 161px"!important>
-  			<img src="static/img/banner/r1.jpg"  alt="Snow" style="width:100%;">
-
-	</div>
-
-	<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
-	<script src="{{ url_for('static', filename='js/popper.js')}}"></script>
-	<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
-	<script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js')}}"></script>
-	<script src="{{ url_for('static', filename='js/mail-script.js')}}"></script>
-	<script src="{{ url_for('static', filename='js/custom.js')}}"></script>
-</body>
-
-</html>
+</div>
+{% endblock %}
